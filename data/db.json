@@ -35,6 +35,12 @@
       "password": "$2a$10$caqfsDHDslQ3Ozi1SMne9ehsMQsSLUlhwufk4WU3Ud9LGXCRmStze",
       "username": "doniyoreshmamatov",
       "id": 6
+    },
+    {
+      "email": "edoniyorbekdev@gmail.com",
+      "password": "$2a$10$EYT1V2piipOeuQiUCDqb0.C5NDPt6ormsloDphXzZ.EYg8c8vx24O",
+      "username": "doniyoreshmamatov",
+      "id": 7
     }
   ]
 }
