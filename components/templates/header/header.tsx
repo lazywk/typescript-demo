@@ -8,6 +8,9 @@ import {
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import Link from 'next/link'
+import { useDispatch, useSelector } from 'react-redux'
+import { logoutSuccess } from '@/store/auth'
+import { RootState } from '@/store'
 
 const products = [
   { name: 'Home', href: '/', icon: ChartPieIcon },
@@ -17,6 +20,8 @@ const products = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false)
+  const { signedIn } = useSelector((state: RootState) => state.auth)
+  const dispatch = useDispatch()
 
   return (
     <header className="bg-white border w-full">
@@ -55,7 +60,7 @@ export default function Header() {
           <Popover.Group className="hidden lg:flex lg:gap-x-12">
             <Popover className="relative">
               <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 outline-0">
-                <p>Profile</p>
+                <p>Menu</p>
                 <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
               </Popover.Button>
 
@@ -86,6 +91,27 @@ export default function Header() {
                         </div>
                       </div>
                     ))}
+
+                    <div
+                      key="logout"
+                      className="group relative flex items-center gap-x-6 rounded-lg p-2 text-sm leading-6 hover:bg-gray-50"
+                    >
+                      <div className="flex flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                        <ChartPieIcon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
+                      </div>
+                      <div className="flex-auto">
+                        <button
+                          onClick={() => {
+                            dispatch(logoutSuccess())
+                            setMobileMenuOpen(false)
+                          }}
+                          className="block font-semibold text-gray-900"
+                        >
+                          Log out
+                          <span className="absolute inset-0" />
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </Popover.Panel>
               </Transition>
@@ -131,6 +157,15 @@ export default function Header() {
                 >
                   Posts
                 </Link>
+                {signedIn && <button
+                  onClick={() => {
+                    dispatch(logoutSuccess())
+                    setMobileMenuOpen(false)
+                  }}
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                >
+                  Log out
+                </button>}
               </div>
             </div>
           </div>
