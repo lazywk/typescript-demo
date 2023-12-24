@@ -1,6 +1,8 @@
 import RegisterForm from "@/components/partials/register/register-form";
 import useAuth from "@/utils/hooks/useAuth";
 import { RegisterFieldtypes } from "@/utils/types/field-types";
+import Router from "next/router";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 
 export default function RegisterPage() {
@@ -20,6 +22,13 @@ export default function RegisterPage() {
                 }
             })
     }
+
+    useEffect(() => {
+        if (localStorage.getItem('token')) {
+            Router.push('/')
+        }
+    }, [])
+
     return (
         <div className="container mx-auto flex justify-center items-center flex-col w-[300px] sm:w-[400px] md:w-[500px] pt-[150px]">
             <p className="mb-3 text-2xl text-center">Register</p>
