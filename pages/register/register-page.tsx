@@ -21,7 +21,7 @@ export default function RegisterPage() {
             })
     }
     return (
-        <div className="w-full">
+        <div className="container mx-auto flex justify-center items-center flex-col w-[300px] sm:w-[400px] md:w-[500px] pt-[150px]">
             <p className="mb-3 text-2xl text-center">Register</p>
             <RegisterForm onSubmit={handleSubmit(onSubmit)} errors={errors} register={register} />
         </div>
