@@ -5,8 +5,11 @@ export type AuthLayoutProp = {
 }
 
 export default function AuthLayout({ children }: AuthLayoutProp) {
+
     return (
-        <div className='container mx-auto px-4 h-screen flex justify-center items-center flex-col'>
+        <div
+            className='container mx-auto flex justify-center items-center flex-col w-[300px] sm:w-[400px] md:w-[500px] pt-[150px]'
+        >
             {children}
         </div>
     )

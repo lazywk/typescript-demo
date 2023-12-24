@@ -27,10 +27,8 @@ export default function useAuth() {
           const parsedUser: User = JSON.parse(storedUser);
           dispatch(setUser(parsedUser));
         }
-        Router.push('/')
       } else {
         dispatch(logoutSuccess());
-        Router.push('/login')
       }
     };
 

@@ -10,6 +10,8 @@
     "server": "json-server ./data/db.json -m ./node_modules/json-server-auth --p 8080"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.1.1",
     "@reduxjs/toolkit": "^2.0.1",
     "axios": "^1.6.2",
     "next": "14.0.4",

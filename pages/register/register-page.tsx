@@ -1,5 +1,4 @@
 import RegisterForm from "@/components/partials/register/register-form";
-import AuthLayout from "@/components/templates/auth-layout";
 import useAuth from "@/utils/hooks/useAuth";
 import { RegisterFieldtypes } from "@/utils/types/field-types";
 import { useForm } from "react-hook-form";
@@ -22,9 +21,9 @@ export default function RegisterPage() {
             })
     }
     return (
-        <AuthLayout>
-            <p className="mb-3 text-2xl">Register</p>
+        <div className="w-full">
+            <p className="mb-3 text-2xl text-center">Register</p>
             <RegisterForm onSubmit={handleSubmit(onSubmit)} errors={errors} register={register} />
-        </AuthLayout>
+        </div>
     )
 }

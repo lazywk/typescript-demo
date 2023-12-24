@@ -1,7 +1,18 @@
 import React from 'react'
 
-export default function MainLayout() {
+export type MainLayoutProp = {
+  children: React.ReactNode
+}
+
+
+export default function MainLayout({ children }: MainLayoutProp) {
+
+
   return (
-    <div>MainLayout</div>
+    <>
+      <div className='container mx-auto'>
+        {children}
+      </div>
+    </>
   )
 }

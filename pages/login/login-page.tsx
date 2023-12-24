@@ -1,5 +1,4 @@
 import LoginForm from "@/components/partials/login/login-form";
-import AuthLayout from "@/components/templates/auth-layout";
 import useAuth from "@/utils/hooks/useAuth";
 import { LoginFieldtypes } from "@/utils/types/field-types";
 import { useForm } from "react-hook-form";
@@ -23,9 +22,9 @@ export default function LoginPage() {
     }
 
     return (
-        <AuthLayout>
-            <p className="mb-3 text-2xl">Login</p>
+        <div className="w-full">
+            <p className="mb-3 text-2xl text-center">Login</p>
             <LoginForm onSubmit={handleSubmit(onSubmit)} errors={errors} register={register} />
-        </AuthLayout>
+        </div>
     )
 }

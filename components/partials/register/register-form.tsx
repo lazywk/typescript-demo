@@ -18,7 +18,7 @@ const RegisterForm = ({ onSubmit, register, errors }: Props) => {
     };
 
     return (
-        <div className="login-form w-1/4">
+        <div className="login-form w-full">
             <form onSubmit={onFinish} className='flex flex-col item-center'>
                 <Input
                     className='w-full mb-4'
