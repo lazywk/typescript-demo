@@ -2,8 +2,9 @@ import { Fragment, useState } from 'react'
 import { Dialog, Popover, Transition } from '@headlessui/react'
 import {
   Bars3Icon,
-  ChartPieIcon,
   CursorArrowRaysIcon,
+  HomeIcon,
+  UserIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
@@ -13,7 +14,7 @@ import { logoutSuccess } from '@/store/auth'
 import { RootState } from '@/store'
 
 const products = [
-  { name: 'Home', href: '/', icon: ChartPieIcon },
+  { name: 'Home', href: '/', icon: HomeIcon },
   { name: 'Posts', href: '/posts', icon: CursorArrowRaysIcon },
 ]
 
@@ -97,7 +98,7 @@ export default function Header() {
                       className="group relative flex items-center gap-x-6 rounded-lg p-2 text-sm leading-6 hover:bg-gray-50"
                     >
                       <div className="flex flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                        <ChartPieIcon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
+                        <UserIcon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
                       </div>
                       <div className="flex-auto">
                         <button
