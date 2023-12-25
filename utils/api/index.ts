@@ -8,7 +8,7 @@ const handleResponse = (response: any) => response
 const handleResponseError = (error: any) => Promise.reject(error)
 
 const api = axios.create({
-    baseURL: 'http://localhost:8080',
+    baseURL: process.env.BASE_URL,
     timeout: 10000
 })
 
