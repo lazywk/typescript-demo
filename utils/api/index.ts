@@ -12,14 +12,8 @@ const api = axios.create({
     timeout: 10000
 })
 
-api.interceptors.request.use(
-    config => handleRequest(config),
-    error => handleRequestError(error)
-)
+api.interceptors.request.use(handleRequest, handleRequestError)
 
-api.interceptors.response.use(
-    response => handleResponse(response),
-    error => handleResponseError(error)
-)
+api.interceptors.response.use(handleResponse, handleResponseError)
 
 export default api
